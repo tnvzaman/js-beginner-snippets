@@ -19,7 +19,7 @@ function myMove() {
         }
     }
 }
-document.getElementById("demo").innerHTML = document.documentElement.innerHTML;
+// document.getElementById("demo").innerHTML = document.documentElement.innerHTML;
 
 function newDoc() {
     window.location.assign("https://www.github.com/tnvzaman")
