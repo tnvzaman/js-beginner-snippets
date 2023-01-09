@@ -11,16 +11,28 @@ body {
     background-color: rgba(32, 168, 178, 0.582);
     color: lightcoral;
     display: flex;
+    height:2000px;
     min-height: 100vh;
-    align-items: center;
-    justify-content: center;  
+    /* align-items: center; */
+    justify-content: center;
+    perspective: 1000px;  
     
+}
+
+.container {
+    width: 900;
+    height: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .title {
     display: flex;
     background-color: aquamarine;
     border-radius: 30px;
+    transform-style: preserve-3d;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.3);
     /* align-items: center; */
     /* justify-content: center;  */
     
@@ -32,6 +44,7 @@ body {
     /* border: 3px solid #333;
     background-color: #dfdfdf; */
     text-shadow: 0 20px 20px rgba(0,0,0,0.3);
+    transition: all 0.5s ease-out;
     
 }
 .firstName {
@@ -39,4 +52,8 @@ body {
 }
 
 .lastName {
+}
+
+.test {
+    position: 20000;
 }
