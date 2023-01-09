@@ -5,9 +5,9 @@ const firstName = document.querySelector('.firstName');
 const lastName = document.querySelector('.lastName');
 const fullname = document.querySelectorAll('.fullname');
 
-window.addEventListener('mousemove', (e) => {
-    console.log(e.pageX);
-})
+// window.addEventListener('mousemove', (e) => {
+//     console.log(e.pageX);
+// })
 
 //Moving Animation Event
 container.addEventListener('mousemove', (e) => {
@@ -37,6 +37,29 @@ container.addEventListener('mouseleave', (e) => {
 
 //On page load animation
 window.addEventListener('scroll', (e) => {
-    fullname[0].style.transform = "translateX(-1000px)"
-    fullname[1].style.transform = "translateX(1000px)"
+    // fullname[0].style.transform = "translateX(-1000px)"
+    // fullname[1].style.transform = "translateX(1000px)"
+    
+    // console.log(lastName.offsetLeft);
+    console.log(290 - scrollY)
+    // firstName.style.position = "fixed";
+    firstName.style.left = (-340 - 5 * scrollY) + "px";
+    lastName.style.left = (0 + 5 * scrollY) + "px";
 })
+
+function myMove() {
+    let id = null;
+    let pos = pageX;
+    clearInterval(id);
+    id = setInterval(frame, 5);
+    
+    function frame() {
+        console.log("===inside frame===")
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++;
+            firstName.style.left = pos + "px";
+        }
+    }
+}
