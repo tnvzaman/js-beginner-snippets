@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Anton', sans-serif;
+    font-size: 50;
+    background-color: rgba(32, 168, 178, 0.582);
+    color: lightcoral;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;  
+    
+}
+
+.title {
+    display: flex;
+    background-color: aquamarine;
+    border-radius: 30px;
+    /* align-items: center; */
+    /* justify-content: center;  */
+    
+    
+}
+.fullname {
+    /* width: 200px; */
+    margin: 20px;
+    /* border: 3px solid #333;
+    background-color: #dfdfdf; */
+    text-shadow: 0 20px 20px rgba(0,0,0,0.3);
+    
+}
+.firstName {
+    
+}
+
+.lastName {
+}
