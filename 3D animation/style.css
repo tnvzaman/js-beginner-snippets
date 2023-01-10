@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     
 }
 
@@ -41,7 +41,7 @@ li {
 }
 
 .sticky {
-    position: fixed;
+    position: sticky;
     top: 0;
 }
 .sticky + .content {
@@ -90,6 +90,25 @@ li {
 .lastName {
     /* position: fixed; */
     left: 400px;
+}
+
+.bio {
+    display: flex;
+    height: 1000px;
+    width: 100%;
+    background-color: bisque;
+    margin: 100px;
+    align-items: center;
+    justify-content: center;
+    
+}
+.photo {
+    margin: 50px;
+}
+.aboutme {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .test {
