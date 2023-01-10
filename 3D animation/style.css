@@ -19,7 +19,7 @@ body {
     /* align-items: flex-start; */
     align-items: center;
     /* justify-content: center; */
-    perspective: 1000px;  
+      
     
 }
 
@@ -41,12 +41,12 @@ li {
 }
 
 .sticky {
-    position: sticky;
+    position: fixed;
     top: 0;
 }
 .sticky + .content {
     padding-top: 60px;
-  }
+}
 
 
 .container {
@@ -55,6 +55,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    perspective: 1000px;
     
 }
 

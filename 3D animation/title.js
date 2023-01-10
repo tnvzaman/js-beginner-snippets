@@ -5,6 +5,7 @@ const firstName = document.querySelector('.firstName');
 const lastName = document.querySelector('.lastName');
 const fullname = document.querySelectorAll('.fullname');
 const navbar = document.querySelector('.navbar');
+var sticky = navbar.offsetTop;
 
 // window.addEventListener('mousemove', (e) => {
 //     console.log(e.pageX, e.pageY);
@@ -29,11 +30,13 @@ container.addEventListener('mouseenter', (e) => {
 })
 
 //Animate out
-container.addEventListener('mouseleave', (e) => {
+container.addEventListener('mouseleave', function() {
     title.style.transition = "all 0.5s ease";
     title.style.transform = `rotateY(0deg) rotateX(0deg)`;
-    // fullname[0].style.transition = "all 0.5s ease out";
-    // fullname[1].style.transition = "all 0.5s ease out";
+    fullname[0].style.transform = "translateZ(0px)";
+    fullname[1].style.transform = "translateZ(0px)";
+    fullname[0].style.transition = "all 0.5s ease out";
+    fullname[1].style.transition = "all 0.5s ease out";
 })
 
 //Intro page scroll animation
@@ -53,7 +56,7 @@ window.addEventListener('scroll', (e) => {
 window.addEventListener('scroll', stickyNavbar);
 
 function stickyNavbar() {
-    var sticky = navbar.offsetTop;
+    
     console.log(window.pageYOffset);
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky");
