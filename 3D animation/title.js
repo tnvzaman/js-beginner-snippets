@@ -4,9 +4,10 @@ const title = document.querySelector('.title');
 const firstName = document.querySelector('.firstName');
 const lastName = document.querySelector('.lastName');
 const fullname = document.querySelectorAll('.fullname');
+const navbar = document.querySelector('.navbar');
 
 // window.addEventListener('mousemove', (e) => {
-//     console.log(e.pageX);
+//     console.log(e.pageX, e.pageY);
 // })
 
 //Moving Animation Event
@@ -35,17 +36,32 @@ container.addEventListener('mouseleave', (e) => {
     // fullname[1].style.transition = "all 0.5s ease out";
 })
 
-//On page load animation
+//Intro page scroll animation
 window.addEventListener('scroll', (e) => {
-    // fullname[0].style.transform = "translateX(-1000px)"
-    // fullname[1].style.transform = "translateX(1000px)"
     
-    // console.log(lastName.offsetLeft);
-    console.log(290 - scrollY)
-    // firstName.style.position = "fixed";
-    firstName.style.left = (-340 - 5 * scrollY) + "px";
-    lastName.style.left = (0 + 5 * scrollY) + "px";
+    let firstNamePos = 360 + 5 * scrollY;
+    let lastNamePos = 400 + 5 * scrollY;
+    // console.log(firstNamePos)
+    if (firstNamePos < 1400) {
+        firstName.style.right = (firstNamePos) + "px";
+        lastName.style.left = (lastNamePos) + "px";
+    }
+    
 })
+
+// navbar sticking to the top when scrolling
+window.addEventListener('scroll', stickyNavbar);
+
+function stickyNavbar() {
+    var sticky = navbar.offsetTop;
+    console.log(window.pageYOffset);
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+        // navbar.style.top = window.pageYOffset;
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
 
 function myMove() {
     let id = null;

@@ -11,13 +11,43 @@ body {
     background-color: rgba(32, 168, 178, 0.582);
     color: lightcoral;
     display: flex;
+    flex-direction: column;
     height:2000px;
     min-height: 100vh;
-    /* align-items: center; */
-    justify-content: center;
+    max-width: 100%; 
+    overflow-x: hidden;
+    /* align-items: flex-start; */
+    align-items: center;
+    /* justify-content: center; */
     perspective: 1000px;  
     
 }
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+li {
+    display: inline;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+.sticky + .content {
+    padding-top: 60px;
+  }
+
 
 .container {
     width: 900;
@@ -30,14 +60,13 @@ body {
 
 .title {
     background-color: aquamarine;
-    /* height: 200px;
-    width: 1000px; */
-    /* border-radius: 30px; */
-    /* transform-style: preserve-3d; */
-    /* box-shadow: 0 20px 20px rgba(0,0,0,0.3); */
+    height: 200px;
+    width: 760px;
+    border-radius: 30px;
+    transform-style: preserve-3d; 
+    box-shadow: 0 20px 20px rgba(0,0,0,0.3);
     /* align-items: center; */
     /* justify-content: center;  */
-    transform-style: preserve-3d;
 }
 
 .fullname {
@@ -53,13 +82,13 @@ body {
 }
 .firstName {
     
-    left: -340px;
+    right: 360px;
     
 }
 
 .lastName {
     /* position: fixed; */
-    left: 0px;
+    left: 400px;
 }
 
 .test {
