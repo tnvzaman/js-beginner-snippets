@@ -102,6 +102,11 @@ li {
     justify-content: center;
     
 }
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .photo {
     margin: 50px;
 }
@@ -109,6 +114,15 @@ li {
     margin: 50px;
     display: flex;
     flex-direction: column;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 3s;
+}
+
+.show {
+    opacity: 1;
 }
 
 .test {
