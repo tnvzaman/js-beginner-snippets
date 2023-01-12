@@ -41,7 +41,6 @@ container.addEventListener('mouseleave', function() {
 
 //Intro page scroll animation
 window.addEventListener('scroll', (e) => {
-    
     let firstNamePos = 360 + 5 * scrollY;
     let lastNamePos = 400 + 5 * scrollY;
     // console.log(firstNamePos)
