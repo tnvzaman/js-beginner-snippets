@@ -2,7 +2,7 @@ const bioContent = document.querySelector('.content');
 // const bioContent = $(".content");
 
 window.addEventListener("scroll", function () {
-    console.log(bioContent.getBoundingClientRect().top)
+    // console.log(bioContent.getBoundingClientRect().top)
     if (bioContent.getBoundingClientRect().top < window.innerHeight) {
         bioContent.classList.add("show");
     } else {
