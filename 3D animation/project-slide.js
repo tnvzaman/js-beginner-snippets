@@ -24,7 +24,7 @@ function scroller(e) {
     const timelineRect = timeline.getBoundingClientRect();
 
     const dist = targetY - timelineRect.top;
-    console.log(dist, timeline.offsetHeight - 400);
+
 
     if (down && !full) {
         set = Math.max(set, dist);
@@ -32,7 +32,6 @@ function scroller(e) {
     }
     
     if (dist > timeline.offsetHeight - 50 && !full) {
-        console.log(timeline.offsetHeight)
         full = true;
         line.style.bottom = `-50`;
 

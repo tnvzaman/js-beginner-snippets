@@ -25,6 +25,7 @@ body {
 }
 
 .navbar a {
+    z-index: 50;
     font-size: 2.5rem;
     float: left;
     text-align: center;
@@ -67,8 +68,8 @@ li {
 
 .container .animate3D {
     display: flex;
-    width: 75%;
-    height: 75%;
+    width: 70%;
+    height: 55%;
     align-items: center;
     justify-content: center;
     perspective: 1000px;
@@ -245,6 +246,7 @@ li {
 }
 
 .game {
+    /* z-index: -2; */
     user-select: none;
     display: flex;
     justify-content: center;
@@ -257,6 +259,7 @@ li {
 .screen {
     position: absolute;
     margin: 50px;
+    /* z-index: -1; */
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -271,6 +274,13 @@ li {
     /* z-index: 1; */
 }
 
+.start-screen {
+    position: absolute;
+    font-size: 2.5rem;
+    top: 45%;
+    right: 38%;
+}
+
 .score {
     position: absolute;
     font-size: 4vmin;
@@ -279,15 +289,16 @@ li {
 }
 
 .x-wing {
-    --left: 45;
+    --left: 40px;
     --bottom: 1;
     /* z-index: 2; */
     width: 10%;
-    position: absolute;
+    position: relative;
     /* top: calc(var(--top) * 1%); */
-    bottom: calc(var(--bottom) * 1%);
+    top: 680;
     /* right: calc(var(--right) * 1%); */
-    left: calc(var(--left) * 1%);
+    left: 445;
+    /* left: calc(var(--left) * 1%); */
 
 }
 
@@ -296,4 +307,8 @@ li {
     left: calc(var(--left) * 1%);
     width: 10%;
     top: 0;
+}
+
+.hide {
+    display: none;
 }

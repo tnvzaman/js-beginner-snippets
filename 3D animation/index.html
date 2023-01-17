@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="navbar">
-            <ul class="navigation">
+            <ul class="navigation" data-navigation>
                 <li><a >Home</a></li>
                 <li><a >About Me</a></li>
                 <li><a >Projects</a></li>
@@ -94,15 +94,16 @@
             </div>
         </div>
     </div>
-    <div class="game">
-        <div class="screen">
-            <div class="score">0</div>
-            <img src="./game/models/x-wing.png" class="x-wing">
+    <div class="game" id="game">
+        <div class="screen" data-screen>
+            <div class="start-screen" data-start-screen>Press Any Key To Start</div>
+            <div class="score" data-score>0</div>
+            <img src="./game/models/x-wing.png" class="x-wing" data-ship>
         </div>
     </div>
 </body>
 <script src="title.js"></script>
 <script src="bio.js"></script>
 <script src="project-slide.js"></script>
-<!-- <script src="./game/game.js" type="module"></script> -->
+<script src="./game/game.js" type="module"></script>
 </html>
