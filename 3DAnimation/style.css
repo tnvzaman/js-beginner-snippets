@@ -304,9 +304,9 @@ li {
 
 .asteroid {
     position: absolute;
+    top: calc(var(--top) * 1%);
     left: calc(var(--left) * 1%);
     width: 10%;
-    top: 0;
 }
 
 .hide {
