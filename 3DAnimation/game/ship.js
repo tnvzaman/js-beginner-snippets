@@ -19,7 +19,7 @@ function moveShip(e) {
     let mouseX = e.pageX - screen.offsetLeft;
     let mouseY = e.pageY - screen.offsetTop;
 
-    if (mouseX > 50 && mouseX < 900) {
+    if (mouseX > 50 && mouseX < 1200) {
         setCustomProperty(ship, "left", mouseX - 45)
         // ship.style.left = ;
     }
@@ -29,4 +29,8 @@ function moveShip(e) {
         // ship.style.top = mouseY - 45;
     }
     
+}
+
+export function getShipRect() {
+    return ship.getBoundingClientRect();
 }

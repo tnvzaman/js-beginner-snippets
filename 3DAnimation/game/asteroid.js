@@ -55,6 +55,12 @@ export function createAsteroid() {
     screen.append(asteroid)
 }
 
+export function getAsteroidRects() {
+    return [...document.querySelectorAll("[data-asteroid]")].map(asteroid => {
+        return asteroid.getBoundingClientRect()
+    })
+}
+
 function randomNumberBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }

@@ -1,5 +1,5 @@
-import { setupShip } from "./ship.js";
-import { updateAsteroid, setupAsteroid } from "./asteroid.js";
+import { setupShip, getShipRect } from "./ship.js";
+import { updateAsteroid, setupAsteroid, getAsteroidRects } from "./asteroid.js";
 
 const SPEED_SCALE_INC = 0.00001;
 const game = document.getElementById("game")
@@ -34,13 +34,39 @@ function update(time) {
     updateSpeedScale(delta)
     updateScore(delta)
     updateAsteroid(delta, speedScale)
-
+    if (checkLose()) {
+        console.log("lose");
+        return handleLose()
+    }
     prevTime = time;
     window.requestAnimationFrame(update)
 }
 
 function updateSpeedScale(delta) {
     speedScale += delta * SPEED_SCALE_INC;
+}
+
+function checkLose() {
+    const shipRect = getShipRect()
+    return getAsteroidRects().some(rect => isCollision(rect, shipRect))
+}
+
+function isCollision(rect1, rect2) {
+    console.log(rect1.bottom, rect2.top);
+    return (
+        rect1.left < rect2.right && 
+        rect1.top < rect2.bottom &&
+        rect1.right > rect2.left &&
+        rect1.bottom > rect2.top
+    )
+    
+}
+
+function handleLose() {
+    setTimeout(() => {
+        screen.addEventListener("click", handleStart, { once: true })
+        startScreen.classList.remove("hide")
+    }, 100)
 }
 
 function updateScore(delta) {
