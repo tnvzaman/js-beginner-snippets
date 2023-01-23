@@ -5,6 +5,7 @@ const firstName = document.querySelector('.firstName');
 const lastName = document.querySelector('.lastName');
 const fullname = document.querySelectorAll('.fullname');
 const navbar = document.querySelector('.navbar');
+const navList = document.querySelector("[data-navigation]");
 var sticky = navbar.offsetTop;
 
 // window.addEventListener('mousemove', (e) => {
@@ -53,15 +54,32 @@ window.addEventListener('scroll', (e) => {
 
 // navbar sticking to the top when scrolling
 window.addEventListener('scroll', stickyNavbar);
+let isHome = false;
 
 function stickyNavbar() {
+    const listChild = document.createElement("a")
+    listChild.setAttribute("href", "#home")
+    listChild.innerHTML = "Home"
+    const homeList = document.createElement("li")
+    homeList.appendChild(listChild)
     
-    // console.log(window.pageYOffset);
+    console.log(isHome);
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky");
+        if (!isHome) {
+            navList.insertBefore(homeList, navList.children[0])
+            isHome = true;
+        }
+        navbar.classList.add("navback");
         // navbar.style.top = window.pageYOffset;
     } else {
+        if (isHome) {
+            navList.removeChild(navList.children[0])
+            isHome = false;
+        }
         navbar.classList.remove("sticky");
+        navbar.classList.remove("navback");
+
     }
 }
 
